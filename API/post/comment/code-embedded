@@ -1,1 +1,0 @@
-curl -X POST --url "https://[SITE].auditboardapp.com/api/v1/comments" -H "Authorization: [TOKEN]" -H "accept: application/json" -H "content-type:application/json" -d "{ \"comment\": { \"message_raw\": \"[COMMENT]\", \"message_html\": \"[COMMENT]\", \"commentable_type\": \"[ITEM_TYPE]\", \"commentable_id\": \"[ITEM_ID]\" } }" -s -S --ssl-no-revoke --location
