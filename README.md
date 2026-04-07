@@ -2,9 +2,7 @@
 Crowdsourced collection documentation, tools, and scripts for Optro *(formerly AuditBoard™)*.
 # Features
 - [API Documentation](/OpenAPI)
-  - OpenAPI [Specifications](/OpenAPI/Specifications)
-    - Official vendor-published JSONs
-    - Historical versions back to v26.0.0
+  - [OpenAPI Specifications](/OpenAPI/Specifications/README.md)
   - Iterative version [diff logs](/OpenAPI/Specifications-DIFF)
 - [Tools](/Tools)
   - *Coming soon...*
