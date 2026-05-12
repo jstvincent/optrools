@@ -1,2 +1,14 @@
-/Local
-/Local/OpenAPI Specs
+# Local-only content (never commit).
+# Keep the folders in-repo via `.gitkeep`, but ignore everything else under `Local/`.
+Local/**
+!Local/.gitkeep
+
+!Local/OpenAPI Specs/
+Local/OpenAPI Specs/**
+!Local/OpenAPI Specs/.gitkeep
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store

@@ -1,0 +1,17 @@
+{
+  "name": "optrools",
+  "private": true,
+  "description": "Development tooling for the optrools repo (Markdown linting and formatting).",
+  "scripts": {
+    "format": "npm run format:md",
+    "format:md": "prettier --write \"**/*.md\"",
+    "format:md:check": "prettier --check \"**/*.md\"",
+    "lint": "npm run lint:md",
+    "lint:md": "markdownlint-cli2"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.22.1",
+    "prettier": "3.8.3"
+  }
+}
+
