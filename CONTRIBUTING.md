@@ -35,6 +35,13 @@ Reference (official download page):
 
 ## Making changes
 
+### Regenerating diff logs (oasdiff)
+
+Diff logs under `OpenAPI/Specifications-DIFF/` can be regenerated from the local spec JSON files in `Local/OpenAPI Specs/`.
+
+1. Ensure `oasdiff` is available in your environment.
+2. Run: `python Scripts/regenerate_oasdiff_diffs.py`
+
 ### Documentation updates
 
 - Keep Markdown changes minimal and consistent with existing style.
