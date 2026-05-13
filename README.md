@@ -8,7 +8,7 @@ Crowdsourced collection documentation, tools, and scripts for Optro *(formerly A
 - [Tools](/Tools)
   - *Coming soon...*
 - [Scripts](/Scripts)
-  - *Coming soon...*
+  - `Scripts/regenerate_oasdiff_diffs.py` (regenerates diff logs from local OpenAPI JSON specs in `Local/OpenAPI Specs/`; use `--scope existing` or `--scope adjacent`)
 
 # Contributing
 We welcome contributions! To propose a change, follow the standard GitHub "fork and pull request" process.
