@@ -1,0 +1,2 @@
+[console_scripts]
+optro = optrotools.cli:app

@@ -1,0 +1,9 @@
+[
+  {
+    "method": "GET",
+    "path": "/users",
+    "params": null,
+    "json": null
+  }
+]
+

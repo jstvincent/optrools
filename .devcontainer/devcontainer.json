@@ -10,9 +10,15 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.22"
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ripgrep && npm ci",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ripgrep && npm ci && python -m pip install -e . && go install github.com/oasdiff/oasdiff@v1.15.3",
   "customizations": {
     "vscode": {
       "extensions": [

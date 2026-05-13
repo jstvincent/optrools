@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/optrotools/__init__.py
+src/optrotools/cli.py
+src/optrotools/config.py
+src/optrotools/http.py
+src/optrotools/release.py
+src/optrotools/specs.py
+src/optrotools.egg-info/PKG-INFO
+src/optrotools.egg-info/SOURCES.txt
+src/optrotools.egg-info/dependency_links.txt
+src/optrotools.egg-info/entry_points.txt
+src/optrotools.egg-info/requires.txt
+src/optrotools.egg-info/top_level.txt

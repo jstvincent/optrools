@@ -1,0 +1,12 @@
+[
+  {
+    "name": "example-generate",
+    "endpoint": "generate",
+    "payload": {
+      "report": {
+        "name": "Example report"
+      }
+    }
+  }
+]
+

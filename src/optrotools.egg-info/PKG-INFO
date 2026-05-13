@@ -1,3 +1,13 @@
+Metadata-Version: 2.4
+Name: optrotools
+Version: 0.1.0
+Summary: CLI utilities for working with the Optro (AuditBoard) API and OpenAPI specs.
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.32.3
+Requires-Dist: rich>=13.7.1
+Requires-Dist: typer>=0.12.3
+
 # Optrools
 Crowdsourced collection documentation, tools, and scripts for Optro *(formerly AuditBoard™)*.
 
@@ -10,7 +20,7 @@ Crowdsourced collection documentation, tools, and scripts for Optro *(formerly A
 - [Scripts](/Scripts)
   - `Scripts/regenerate_oasdiff_diffs.py` (regenerates diff logs from local OpenAPI JSON specs in `Local/OpenAPI Specs/`; use `--scope existing` or `--scope adjacent`)
 - [CLI](/)
-  - `optro` (Python CLI; see `Tools/optro-cli.md`)
+  - `optro` (Python CLI; bulk movers, access audit, evidence helpers, release digests, report helpers, sandbox executor)
 
 # Contributing
 We welcome contributions! To propose a change, follow the standard GitHub "fork and pull request" process.
@@ -26,7 +36,6 @@ This repo includes a `.devcontainer` for GitHub Codespaces. After the Codespace 
 Python tooling is also installed for the `optro` CLI:
 
 - `optro --help`
-- Auth default: `Authorization: Bearer <OPTRO_TOKEN>`
 
 # Credits
 - Owner | [Jonathan St. Vincent](https://lnk.bio/jstvincent)

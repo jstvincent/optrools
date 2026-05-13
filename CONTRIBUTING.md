@@ -10,6 +10,7 @@ Common commands:
 
 - `npm run lint` (Markdown lint)
 - `npm run format` (Markdown format via Prettier)
+- `optro --help` (API/spec helper CLI)
 
 ## Local-only content (do not commit)
 
@@ -42,6 +43,19 @@ Diff logs under `OpenAPI/Specifications-DIFF/` can be regenerated from the local
 
 1. Ensure `oasdiff` is available in your environment.
 2. Run: `python Scripts/regenerate_oasdiff_diffs.py`
+
+## CLI tools (`optro`)
+
+The Python CLI is installed automatically in Codespaces. For local development:
+
+1. `python -m pip install -e .`
+2. Configure API access via environment variables:
+   - `OPTRO_BASE_URL` (required)
+   - `OPTRO_TOKEN` (recommended; used as a Bearer token)
+   - `OPTRO_AUTH_HEADER` (defaults to `Authorization`)
+   - `OPTRO_AUTH_SCHEME` (defaults to `Bearer`)
+
+Safety: most write actions default to dry-run; use `--apply` to execute.
 
 ### Documentation updates
 
