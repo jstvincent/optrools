@@ -50,7 +50,17 @@ class OptroClient:
         if not url.startswith("http"):
             if not url.startswith("/"):
                 url = "/" + url
-            url = f"{self._cfg.base_url}{url}"
+            prefix = self._cfg.api_prefix or ""
+            # Avoid doubling the prefix if the caller already included it.
+            if prefix and url.startswith(prefix + "/"):
+                full_path = url
+            elif prefix and url == prefix:
+                full_path = url
+            elif prefix:
+                full_path = f"{prefix}{url}"
+            else:
+                full_path = url
+            url = f"{self._cfg.base_url}{full_path}"
         return PlannedRequest(method=method, url=url, params=params, json_body=json_body)
 
     def request_json(
@@ -79,6 +89,12 @@ class OptroClient:
             return None
         # best-effort JSON parsing
         ctype = resp.headers.get("content-type", "")
+        if "text/html" in ctype:
+            raise RuntimeError(
+                "Server returned HTML instead of JSON. This often means your base URL is missing the API prefix.\n"
+                f"Current: OPTRO_BASE_URL={self._cfg.base_url!r} OPTRO_API_PREFIX={self._cfg.api_prefix!r}\n"
+                "Try setting OPTRO_API_PREFIX (commonly /api/v1) or include it in OPTRO_BASE_URL."
+            )
         if "application/json" in ctype or ctype.endswith("+json") or ctype == "":
             return resp.json()
         return {"content_type": ctype, "text": resp.text}
@@ -92,4 +108,3 @@ class OptroClient:
                 for chunk in r.iter_content(chunk_size=1024 * 1024):
                     if chunk:
                         f.write(chunk)
-

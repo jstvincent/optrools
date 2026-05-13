@@ -22,6 +22,7 @@ console = Console()
 def _client(
     *,
     base_url: str | None,
+    api_prefix: str | None,
     token: str | None,
     auth_header: str | None,
     auth_scheme: str | None,
@@ -31,6 +32,7 @@ def _client(
 ) -> OptroClient:
     cfg = load_config(
         base_url=base_url,
+        api_prefix=api_prefix,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -79,6 +81,7 @@ def raw_request(
     body = json.loads(data) if data else None
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -110,6 +113,7 @@ def bulk_export(
     """Export a collection endpoint to JSON/NDJSON. Pagination is best-effort (API-dependent)."""
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -149,6 +153,7 @@ def bulk_import(
     """Import items by POSTing to a collection endpoint. Defaults to dry-run; use --apply to execute."""
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -195,6 +200,7 @@ def access_audit(
     """Fetch access-related resources and write a JSON audit snapshot."""
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -240,6 +246,7 @@ def evidence_upload(
     """
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -276,6 +283,7 @@ def evidence_attach(
     """Create an attachment linking a file to an entity via `/attachments`."""
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -325,6 +333,7 @@ def reports_list(
 ) -> None:
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -350,6 +359,7 @@ def reports_generate(
 ) -> None:
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -390,6 +400,7 @@ def reports_pack(
 
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -470,6 +481,7 @@ def sandbox_run(
 ) -> None:
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
@@ -510,6 +522,7 @@ def shadow_export(
     """Export a minimal access 'shadow' snapshot you can compare between tenants."""
     client = _client(
         base_url=base_url,
+        api_prefix=None,
         token=token,
         auth_header=auth_header,
         auth_scheme=auth_scheme,
